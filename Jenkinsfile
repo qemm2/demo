@@ -9,7 +9,7 @@ node {
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
-  sh ("docker build ${imageTag} .")
+  sh ("docker build -f ${imageTag} .")
   stage 'Run Go tests'
   sh("docker run ${imageTag} go test")
 
