@@ -9,7 +9,7 @@ node {
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
-  sh ("docker build https://github.com/qemm2/demo.git:staging")
+  sh ("docker build https://github.com/qemm2/demo.git")
   stage 'Run Go tests'
   sh("docker run ${imageTag} go test")
 
