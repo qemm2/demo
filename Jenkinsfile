@@ -2,7 +2,7 @@ node {
   def project = 'https://github.com/qemm2/demo'
   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
-// modificacion  
+//modificacion  
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
   def imageTag ="${project}/tree/$appName:${env.BRANCH_NAME}"
   checkout scm
