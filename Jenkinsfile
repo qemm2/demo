@@ -5,7 +5,8 @@ node {
 //modificacion  
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
   def imageTag ="${project}/tree/$appName:${env.BRANCH_NAME}"
-  checkout scm
+  def imageTag = "https://github.com/qemm2/demo.git"
+ checkout scm
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
