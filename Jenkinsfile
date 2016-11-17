@@ -9,12 +9,12 @@ node {
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
-  sh ("docker build -f ${imageTag} .")
+  sh ("sudo docker build -f ${imageTag} .")
   stage 'Run Go tests'
   sh("docker run ${imageTag} go test")
 
   stage 'Push image to registry'
-  sh("gcloud docker push ${imageTag}")
+ // sh("gcloud docker push ${imageTag}")
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
