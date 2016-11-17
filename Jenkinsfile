@@ -4,7 +4,7 @@ node {
   def feSvcName = "${appName}-frontend"
 // mmodificacion  
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def imageTag ="${project}/tree/$appName:${env.BRANCH_NAME}"
+  def imageTag ="${project}/tree/$appName"
   checkout scm
 
   stage 'Build image'
