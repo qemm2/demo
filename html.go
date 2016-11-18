@@ -23,7 +23,6 @@ const (
 <head>
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
-HOLA
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
 <title>Frontend Web Server</title>
@@ -37,7 +36,7 @@ HOLA
 
 <div class="card blue">
 <div class="card-content white-text">
-<div class="card-title">Backend that serviced this request</div>
+<div class="card-title">Prueba de go </div>
 </div>
 <div class="card-content white">
 <table class="bordered">
