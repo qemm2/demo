@@ -11,7 +11,7 @@ node {
   sh ("sudo docker build https://github.com/qemm2/demo.git")
  //sh ("sudo docker build -f ${imageTag} .")
   stage 'Run Go tests'
-  sh("sudo docker run https://github.com/qemm2/demo go test")
+  sh("sudo docker run golang go test")
 
   stage 'Push image to registry'
  // sh("gcloud docker push ${imageTag}")
