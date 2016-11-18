@@ -80,7 +80,7 @@ aa<!-- Compiled and minified JavaScript -->
 
 <div class="card blue">
 <div class="card-content white-text">
-<div class="card-title">Proxy that handled this request</div>
+<div class="card-title">   asdsadasdas Proxy that handled this request</div>
 </div>
 <div class="card-content white">
 <table class="bordered">
