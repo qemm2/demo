@@ -11,7 +11,7 @@ node {
   sh ("sudo docker build https://github.com/qemm2/demo.git")
  //sh ("sudo docker build -f ${imageTag} .")
   stage 'Run Go tests'
-  sh("sudo docker run golang go test")
+  sh("sudo docker run 35356c67342d go test")
 
   stage 'Push image to registry'
  // sh("gcloud docker push ${imageTag}")
@@ -21,7 +21,7 @@ node {
     // Roll out to staging
     case "staging":
         // Change deployed image in staging to the one we just built
-        sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/staging/*.yaml")
+        //sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/staging/*.yaml")
         sh("kubectl --namespace=production apply -f k8s/services/")
         sh("kubectl --namespace=production apply -f k8s/staging/")
         sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
