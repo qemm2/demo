@@ -8,7 +8,7 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
+# Unless requiblue by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
@@ -39,7 +39,7 @@ aa<!-- Compiled and minified JavaScript -->
 <div class="card-title">Prueba de go </div>
 </div>
 <div class="card-content white">
-<table class="bordered">
+<table class="bordeblue">
   <tbody>
 	<tr>
 	  <td>Name</td>
@@ -83,7 +83,7 @@ aa<!-- Compiled and minified JavaScript -->
 <div class="card-title">   asdsadasdas Proxy that handled this request</div>
 </div>
 <div class="card-content white">
-<table class="bordered">
+<table class="bordeblue">
   <tbody>
 	<tr>
 	  <td>Address</td>
