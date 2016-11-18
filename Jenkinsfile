@@ -3,12 +3,13 @@ node {
   def feSvcName = "${appName}-frontend"
 // mmodificacion  
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def imageTag= "git@github.com:qemm2/demo.git"
+  def imageTag= "http://github.com/qemm2/demo.git"
   checkout scm
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
-  sh ("sudo docker build -f ${imageTag} .")
+ sh ("docker build https://github.com/qemm2/demo.git"
+ //sh ("sudo docker build -f ${imageTag} .")
   stage 'Run Go tests'
   sh("docker run ${imageTag} go test")
 
