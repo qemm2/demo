@@ -8,10 +8,10 @@ node {
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
-  sh ("docker build https://github.com/qemm2/demo.git")
+  sh ("sudo docker build https://github.com/qemm2/demo.git")
  //sh ("sudo docker build -f ${imageTag} .")
   stage 'Run Go tests'
-  sh("docker run ${imageTag} go test")
+  sh("sudo docker run ${imageTag} go test")
 
   stage 'Push image to registry'
  // sh("gcloud docker push ${imageTag}")
