@@ -15,8 +15,8 @@ node {
   stage 'Run Go tests'
   sh("sudo docker run 35356c67342d go test")
 
-  stage 'Push image to registry'
-  sh("sudo docker push 35356c67342d")
+//  stage 'Push image to registry'
+//  sh("sudo docker push 35356c67342d")
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
