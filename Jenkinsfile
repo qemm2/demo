@@ -13,7 +13,7 @@ node {
   stage 'Run Go tests'
 sh ("sudo docker images -q |head -n 1 > result")
   def output=readFile('result').trim()
-  sh("docker run ${output} go test")
+  sh("sudo docker run ${output} go test")
 
 //  stage 'Push image to registry'
 //  sh("gcloud docker push ${imageTag}")
