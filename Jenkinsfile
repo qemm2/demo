@@ -39,7 +39,7 @@ node {
     case "master":
         // Change deployed image in staging to the one we just built
         sh ("sed -i.bak 's/${output}/5803fe09acbd/' ./k8s/production/*.yaml")
-	sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#$(imageTag}#' ./k8s/production/*.yaml")
+	sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/production/*.yaml")
         sh("kubectl --namespace=production apply -f k8s/services/")
         sh("kubectl --namespace=production apply -f k8s/production/")
         sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
