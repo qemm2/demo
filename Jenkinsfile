@@ -14,7 +14,7 @@ node {
   sh ("sudo docker build https://github.com/qemm2/demo.git")
  //sh ("sudo docker build -f ${imageTag} .")
   //stage 'Run Go tests'
-  sh("sudo docker run ${image} go test
+  sh("sudo docker run ${image} go test)
 //sh("sudo docker run 35356c67342d go test")
 
 //  stage 'Push image to registry'
