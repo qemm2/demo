@@ -5,7 +5,7 @@ node {
 //
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
   def imageTag= "http://github.com/qemm2/demo.git"
-  def image =  sh ("sudo docker images -q |head -n 1")
+  def image =  `sudo docker images -q |head -n 1`
 //
   checkout scm
 
