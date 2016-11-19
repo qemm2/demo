@@ -1,14 +1,12 @@
 node {
   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
-<<<<<<< HEAD
 //modificacion  
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
  // def imageTag ="${project}/tree/$appName:${env.BRANCH_NAME}"
 echo "hola"
   def imageTag = "https://github.com/qemm2/demo.git"
  checkout scm
-=======
 // mmodificacion  
 //
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
@@ -19,18 +17,15 @@ echo "hola"
 // image =  sudo docker images -q |head -n 1`
 //
   checkout scm
->>>>>>> 49ad52e7fcbdabf447e14730a944bad43a1a55ee
 
   stage 'Build image'
   //sh("docker build -t ${imageTag} .")
   sh ("sudo docker build https://github.com/qemm2/demo.git")
-<<<<<<< HEAD
   stage 'Run Go tests'
   sh("sudo docker run ${imageTag} go test")
 
   stage 'Push image to registry'
   sh("sudo docker push ${imageTag}")
-=======
  //sh ("sudo docker build -f ${imageTag} .")
   //stage 'Run Go tests'
   sh ("sudo docker images -q |head -n 1 > result")
@@ -40,14 +35,13 @@ echo "hola"
 
 //  stage 'Push image to registry'
 //  sh("sudo docker push 35356c67342d")
->>>>>>> 49ad52e7fcbdabf447e14730a944bad43a1a55ee
 
   stage "Deploy Application"
   switch (env.BRANCH_NAME) {
     // Roll out to staging
     case "staging":
         // Change deployed image in staging to the one we just built
-        sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${output}#' ./k8s/staging/*.yaml")
+        sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/staging/*.yaml")
         sh("kubectl --namespace=production apply -f k8s/services/")
         sh("kubectl --namespace=production apply -f k8s/staging/")
         sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
@@ -57,7 +51,7 @@ echo "hola"
     case "master":
         // Change deployed image in staging to the one we just built
         sh ("sed -i.bak 's/${output}/5803fe09acbd/' ./k8s/production/*.yaml")
-	//sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${output}#' ./k8s/production/*.yaml")
+	//sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/production/*.yaml")
         sh("kubectl --namespace=production apply -f k8s/services/")
         sh("kubectl --namespace=production apply -f k8s/production/")
         sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
