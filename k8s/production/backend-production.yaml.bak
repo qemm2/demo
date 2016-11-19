@@ -14,12 +14,12 @@
 
 kind: Deployment
 apiVersion: extensions/v1beta1
-met5803fe09acbdta:
+met${output}ta:
   name: gceme-backend-production
 spec:
   replicas: 1
   template:
-    met5803fe09acbdta:
+    met${output}ta:
       name: backend
       labels:
         app: gceme
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: 5803fe09acbd
+        image: ${output}
         resources:
           limits:
             memory: "500Mi"
