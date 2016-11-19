@@ -1,10 +1,8 @@
 node {
   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
-//modificacion  
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
  // def imageTag ="${project}/tree/$appName:${env.BRANCH_NAME}"
-echo "hola"
   def imageTag = "https://github.com/qemm2/demo.git"
  checkout scm
 // mmodificacion  
