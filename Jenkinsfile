@@ -8,10 +8,10 @@ node {
 
   stage 'Build image'
   sh ("sudo docker build https://github.com/qemm2/demo.git")
-//  sh("docker build -t ${imageTag} .")
+//sh("docker build -t ${imageTag} .")
 
   stage 'Run Go tests'
-sh ("sudo docker images -q |head -n 1 > result")
+  sh ("sudo docker images -q |head -n 1 > result")
   def output=readFile('result').trim()
   sh("sudo docker run ${output} go test")
 
