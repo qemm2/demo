@@ -8,7 +8,7 @@ node {
 // mmodificacion  
 //
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
-  def imageTag= "http://github.com/qemm2/demo.git"
+  def imageTag = "http://github.com/qemm2/demo.git"
 //  sh ("sudo docker images -q |head -n 1 > result")  
 // def output=readFile('result').trim()
 // echo "output=$output";
