@@ -9,10 +9,10 @@ node {
 //
 //def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 //  def imageTag = "http://github.com/qemm2/demo.git"
-//  sh ("sudo docker images -q |head -n 1 > result")  
-// def output=readFile('result').trim()
-// echo "output=$output";
-// image =  sudo docker images -q |head -n 1`
+/  sh ("sudo docker images -q |head -n 1 > result")  
+/ def output=readFile('result').trim()
+/// echo "output=$output";
+ image =  sudo docker images -q |head -n 1`
 //
   checkout scm
 
@@ -20,7 +20,7 @@ node {
   //sh("docker build -t ${imageTag} .")
   sh ("sudo docker build https://github.com/qemm2/demo.git")
   stage 'Run Go tests'
-  sh("sudo docker run ${imageTag} go test")
+  sh("sudo docker run ${output} go test")
 
   stage 'Push image to registry'
   sh("sudo docker push ${imageTag}")
