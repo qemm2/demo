@@ -14,7 +14,7 @@
 
 kind: Deployment
 apiVersion: extensions/v1beta1
-met5803fe09acbdta:
+metadata:
   name: gceme-frontend-production
 spec:
   replicas:
