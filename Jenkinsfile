@@ -23,24 +23,24 @@ node {
   switch (env.BRANCH_NAME) {
     // Roll out to staging
     case "staging":
-        sh("kubectl --namespace=produccion apply -f k8s/services/")
-        sh("kubectl --namespace=produccion apply -f k8s/staging/")
-        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("kubectl --namespace=production apply -f k8s/services/")
+        sh("kubectl --namespace=production apply -f k8s/staging/")
+        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         // Change deployed image in staging to the one we just built
-        sh("kubectl --namespace=produccion apply -f k8s/services/")
-        sh("kubectl --namespace=produccion apply -f k8s/staging/")
-        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("kubectl --namespace=production apply -f k8s/services/")
+        sh("kubectl --namespace=production apply -f k8s/staging/")
+        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         break
 
     // Roll out to production
     case "master":
-        sh("kubectl --namespace=produccion apply -f k8s/services/")
-        sh("kubectl --namespace=produccion apply -f k8s/production/")
-        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("kubectl --namespace=production apply -f k8s/services/")
+        sh("kubectl --namespace=production apply -f k8s/production/")
+        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         // Change deployed image in staging to the one we just built
         sh("kubectl --namespace=production apply -f k8s/services/")
         sh("kubectl --namespace=production apply -f k8s/production/")
-        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         break
 
     // Roll out a dev environment
