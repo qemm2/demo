@@ -19,7 +19,7 @@ metadata:
 spec:
   replicas:
   template:
-    met5803fe09acbdta:
+    metadata:
       name: frontend
       labels:
         app: gceme
@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 5803fe09acbd
+        image: gcr.io/cloud-solutions-images/gceme:1.0.0
         resources:
           limits:
             memory: "500Mi"

@@ -23,10 +23,11 @@ const (
 <head>
 asdasd
 <!-- Compiled and minified CSS -->
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
 aa<!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-<title>Frontend Web Server</title>
+<title>cRACKS Frontend Web Server</title>
 </head>
 <body>
 <div class="container">
