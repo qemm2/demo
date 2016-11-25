@@ -25,24 +25,22 @@ node {
     case "staging":
         sh("kubectl --namespace=produccion apply -f k8s/services/")
         sh("kubectl --namespace=produccion apply -f k8s/staging/")
-        sh("echo http://`kubectl --namespace=pro get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         // Change deployed image in staging to the one we just built
-//        sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/staging/*.yaml")
-        sh("kubectl --namespace=production apply -f k8s/services/")
-        sh("kubectl --namespace=production apply -f k8s/staging/")
-        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("kubectl --namespace=produccion apply -f k8s/services/")
+        sh("kubectl --namespace=produccion apply -f k8s/staging/")
+        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         break
 
     // Roll out to production
     case "master":
         sh("kubectl --namespace=produccion apply -f k8s/services/")
         sh("kubectl --namespace=produccion apply -f k8s/production/")
-        sh("echo http://`kubectl --namespace=pro get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         // Change deployed image in staging to the one we just built
-//        sh("sed -i.bak 's#gcr.io/cloud-solutions-images/gceme:1.0.0#${imageTag}#' ./k8s/production/*.yaml")
         sh("kubectl --namespace=production apply -f k8s/services/")
         sh("kubectl --namespace=production apply -f k8s/production/")
-        sh("echo http://`kubectl --namespace=production get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+        sh("echo http://`kubectl --namespace=produccion get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
         break
 
     // Roll out a dev environment
