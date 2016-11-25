@@ -23,7 +23,11 @@ const (
 <head>
 asdasd
 <!-- Compiled and minified CSS -->
+<<<<<<< HEAD
 
+=======
+HOOLLAAAA
+>>>>>>> 60adb5379cbed9ead746011ae5e6bab2cb6b5f12
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
 aa<!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
