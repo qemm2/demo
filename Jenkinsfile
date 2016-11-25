@@ -1,7 +1,7 @@
 node {
   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
-
+//MODIFICACION
   checkout scm
 
   stage 'Build image'
