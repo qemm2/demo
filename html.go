@@ -36,7 +36,9 @@ aa<!-- Compiled and minified JavaScript -->
 <div class="col s8">
 
 
-<div class="card blue">
+<div class="card red">
+
+Hola caracola
 <div class="card-content white-text">
 <div class="card-title">Prueba de go </div>
 </div>
