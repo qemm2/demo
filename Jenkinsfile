@@ -1,6 +1,4 @@
 node {
-   def appName = 'gceme'
-  def feSvcName = "${appName}-frontend"
  ///MODIFICACION
   //def project = 'REPLACE_WITH_YOUR_PROJECT_ID'
   def appName = 'gceme'
