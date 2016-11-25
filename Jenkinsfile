@@ -1,6 +1,6 @@
 node {
 <<<<<<< HEAD
-  def appName = 'gceme'
+   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
  ///MODIFICACION
 =======
