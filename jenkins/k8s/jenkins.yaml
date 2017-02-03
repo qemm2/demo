@@ -44,20 +44,4 @@ spec:
             secretKeyRef:
               name: jenkins
               key: options
-        volumeMounts:
-        - mountPath: /var/jenkins_home
-          name: jenkins-home
-        resources:
-          limits:
-            cpu: 500m
-            memory: 1500Mi
-          requests:
-            cpu: 500m
-            memory: 1500Mi
-      volumes:
-      - name: jenkins-home
-        gcePersistentDisk:
-          pdName: jenkins-home
-          fsType: ext4
-          partition: 1
 # [END jenkins_deployment]

@@ -1,5 +1,6 @@
 /**
 # Copyright 2015 Google Inc. All rights reserved.
+##
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -7,12 +8,13 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-# Unless required by applicable law or agreed to in writing, software
+# Unless requiblue by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-**/
+*
+*/
 
 package main
 
@@ -20,12 +22,17 @@ const (
 	html = `<!doctype html>
 <html>
 <head>
+asdasd
 <!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+<<<<<<< HEAD
 
-<!-- Compiled and minified JavaScript -->
+=======
+HOOLLAAAA
+>>>>>>> 60adb5379cbed9ead746011ae5e6bab2cb6b5f12
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+aa<!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
-<title>Frontend Web Server</title>
+<title>cRACKS Frontend Web Server</title>
 </head>
 <body>
 <div class="container">
@@ -34,12 +41,14 @@ const (
 <div class="col s8">
 
 
-<div class="card blue">
+<div class="card red">
+
+Hola caracola
 <div class="card-content white-text">
-<div class="card-title">Backend that serviced this request</div>
+<div class="card-title">Prueba de go </div>
 </div>
 <div class="card-content white">
-<table class="bordered">
+<table class="bordeblue">
   <tbody>
 	<tr>
 	  <td>Name</td>
@@ -80,10 +89,10 @@ const (
 
 <div class="card blue">
 <div class="card-content white-text">
-<div class="card-title">Proxy that handled this request</div>
+<div class="card-title">   asdsadasdas Proxy that handled this request</div>
 </div>
 <div class="card-content white">
-<table class="bordered">
+<table class="bordeblue">
   <tbody>
 	<tr>
 	  <td>Address</td>
